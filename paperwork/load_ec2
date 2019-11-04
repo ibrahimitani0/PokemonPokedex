@@ -1,0 +1,28 @@
+
+
+1. create EC2
+type = t2.micro
+allow all https and http traffic from all users
+allow ssh from myip
+
+ssh in and run 
+
+sudo yum update -y
+
+sudo yum upgrade -y
+
+sudo yum install mysql
+sudo yum install mysql-server // testing 
+sudo yum install php
+sudo yum install httpd
+sudo yum install git
+
+sudo service httpd start
+
+cd /var/www/html
+git clone ***https linke***
+
+
+
+
+RDS name = PokemanPokedex
