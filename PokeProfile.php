@@ -45,7 +45,7 @@
                       '<div class="col-md-6">' .
                       '<div class="list-group">' .
                       '<a href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">' .
-                      '<img  class="img-thumbnail"  src="./images/pic/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
+                      '<img  class="img-thumbnail"  src="./json-sql/images/pic/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
                       '</a>' .
                       '</div>' .
                       '</div>' .
