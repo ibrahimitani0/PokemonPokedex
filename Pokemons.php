@@ -38,7 +38,7 @@
             while ($pull_data = $sql_display->fetch_assoc()) {
                 echo '<div class="img-thumbnail col-md-3" style=" margin: 30px;"  >
                   <a  href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">
-                    <img style="margin-left: 20%;" width="100" height="100;" src="PokemonPokedex/json-sql/images/' . $pull_data['ImagePath'] . '" alt="random image">' . '
+                    <img style="margin-left: 20%;" width="100" height="100;" src="./json-sql/images/' . $pull_data['ImagePath'] . '" alt="random image">' . '
                     <div style="text-align: center;"><p class="btn btn-primary" style="width: 100%; margin-top: 5%">'. $pull_data['PokemonName'] .'</p>
                    </div>
                   </a>';
