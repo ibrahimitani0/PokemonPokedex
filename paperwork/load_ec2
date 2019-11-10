@@ -1,28 +1,44 @@
 RDS = pokelookup.cg60yrfxwjb1.us-east-1.rds.amazonaws.com
 
 1. create EC2
+Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
 type = t2.micro
 allow all https and http traffic from all users
 allow ssh from myip
 
 ssh in and run 
 
-sudo yum update -y
+Run Comands below:
 
-sudo yum upgrade -y
+sudo apt update -y
 
-sudo yum install mysql
-sudo yum install mysql-server // testing 
-sudo yum install php
-sudo yum install httpd
-sudo yum install git
+sudo apt upgrade -y
+
+sudo apt install mysql
+sudo apt install mysql-server // testing 
+sudo apt install php
+sudo apt install httpd
+sudo apt install git
 
 sudo service httpd start
 
 cd /var/www/html
-git clone ***https linke***
+git clone ***https link***
 
 
 
 
 RDS name = PokemanPokedex
+
+
+comands to access DB from EC2:
+
+mysql -h **pokelookup.cg60yrfxwjb1.us-east-1.rds.amazonaws.com*** -P 3306 -u **username** -p
+
+enter password!!
+
+create schema pokedex;
+
+exit
+mysql -h **pokelookup.cg60yrfxwjb1.us-east-1.rds.amazonaws.com*** -P 3306 -u **username** -p  pokedex > **sql file*
+
