@@ -1,8 +1,8 @@
 <?php
 
 $user = 'root';
-$pass = '';
+$pass = 'admin12345678';
 $db = 'PokeLookUp';
-$host= 'localhost';
+$host= '';
 
 ?>
