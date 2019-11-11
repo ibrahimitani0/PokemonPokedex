@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PokeLookUp</title>
+    <title>PokemonPokedex</title>
 </head>
 <body background = "images/poketexture1.jpg">
 <style>
@@ -24,10 +24,10 @@
 
             <?php
             if (isset($_SESSION['UID'])) {
-                echo '<div class="panel panel-primary" ><div class="panel-heading"><h4>Generation 1 Pokemons</h4></div><div class="panel-body container-outer" ><div class="container-inner" >';
+                echo '<div class="panel panel-primary" ><div class="panel-heading"><h4>All Generations</h4></div><div class="panel-body container-outer" ><div class="container-inner" >';
 
             } else {
-                echo '<div class="panel panel-primary"><div class="panel-heading"><h4>Generation 1 Pokemons</h4></div><div class="panel-body container-outer"><div class="container-inner" >';
+                echo '<div class="panel panel-primary"><div class="panel-heading"><h4>All Generations</h4></div><div class="panel-body container-outer"><div class="container-inner" >';
 
             }
 

@@ -23,21 +23,22 @@
 
           <div class="panel panel-primary">
               <div class="panel-heading">
-                  <h4>Welcome to PokeLookUp</h4>
+                  <h4>Welcome to PokemonPokedex</h4>
               </div>
                 <div class="panel-body">
-                  <p class = "panel-primary" style="margin-bottom: 5%"> Welcome Trainer!! PokeLoopUp is a Generation 1 Pokemon Database where you can view all 151 Gen 1 Pokemons with all their stats, enjoy your stay.</p>
+                  <p class = "panel-primary" style="margin-bottom: 5%"> Welcome Trainer!! PokemonPokedex allows you to view all Pokemon from all games so far with all their stats, enjoy your stay.</p>
 
                   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                      <div style="padding-bottom:10px;"><h3>Kanto Region Map</h3></div>
+                      <!--  <div style="padding-bottom:10px;"><h3>All Regions Map</h3></div> -->
                       <div class="carousel-inner" role="listbox">
                           <div class="item active">
-                              <img src="images/kantoMap.jpg"/>
+                              <img src="images/all%20pokemon.jpg"/>
                           </div>
                       </div>
+
                 </div>
             </div>
-        </div>
+        </div> <!-- panel ends here -->
     </div>
 </div>
 

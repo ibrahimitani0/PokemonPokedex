@@ -37,7 +37,7 @@
                     echo '<div class="col-md-3">
                             <div class="img-thumbnail" style="margin: 10%;">
                               <a style="text-decoration: solid" href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">
-                                <img height="80" src="images/icons/' . $pull_data['ImagePath'] . '" alt="random image">' .
+                                <img height="80" src="json-sql/sprites/' . $pull_data['ImagePath'] . '" alt="random image">' .
                                  '<p class="btn btn-block" style="text-align: center; text-decoration-style: solid;">'. $pull_data['PokemonName'] .'</p>'.
                               '</a>
                             </div>
