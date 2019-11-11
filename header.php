@@ -1,8 +1,8 @@
 <?php
-session_start();
+
 include 'dbinfo.php';
 
-$db = new mysqli('localhost', $user, $pass, $db) or die ("Unable to connect");
+
 ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html;  charset=UTF-8"/>
@@ -59,6 +59,11 @@ $db = new mysqli('localhost', $user, $pass, $db) or die ("Unable to connect");
                         }
                         ?>><a href="Pokemons.php"><img class="img-responsive img-logo" style="width: 60px;" src="images/pokemonlogo.png"></a></li>
 
+                        <li <?php
+                        if (basename($_SERVER['SCRIPT_FILENAME']) == 'Moves.php') {
+                            echo("class='active'");
+                        }
+                        ?>><a href="Moves.php"><img class="img-responsive img-logo" style="width: 60px; height: 22px; " src="images/starterpokemons.jpeg"></a></li>
                     </ul>
                     <form class="navbar-form navbar-right" method="POST" action="SearchQuery.php">
                         <div class="form-group">

@@ -23,18 +23,12 @@
         <div class="col-md-9  ">  <!-- start main content column -->
 
             <?php
-            if (isset($_SESSION['UID'])) {
-                echo '<div class="panel panel-primary" ><div class="panel-heading"><h4>All Generations</h4></div><div class="panel-body container-outer" ><div class="container-inner" >';
+            echo '<div class="panel panel-primary">
+                <div class="panel-heading"><h4>All Generations</h4>
+                </div><div class="panel-body container-outer">
+                <div class="container-inner" >';
 
-            } else {
-                echo '<div class="panel panel-primary"><div class="panel-heading"><h4>All Generations</h4></div><div class="panel-body container-outer"><div class="container-inner" >';
-
-            }
-
-            ?>
-
-            <?php
-            $sql_display = mysqli_query($db, "SELECT * FROM `Pokemon`;");
+            $sql_display = mysqli_query($mysqli, "SELECT * FROM `Pokemon`;");
             while ($pull_data = $sql_display->fetch_assoc()) {
                 echo '<div class="img-thumbnail col-md-3" style=" margin: 30px;"  >
                   <a  href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">

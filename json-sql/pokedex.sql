@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `Pokemon` (
   `EvolutionID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO Pokemon VALUES
-    (0, 'Bulbasaur',1,45,49,49,65,65,45, 'Grass', 'Poison', '1.png',''),
+(0, 'Bulbasaur',1,45,49,49,65,65,45, 'Grass', 'Poison', '1.png',''),
 (1, 'Ivysaur',2,60,62,63,80,80,60, 'Grass', 'Poison', '2.png',''),
 (2, 'Venusaur',3,80,82,83,100,100,80, 'Grass', 'Poison', '3.png',''),
 (3, 'Mega Venusaur',3,80,100,123,122,120,80, 'Grass', 'Poison', '3-mega.png',''),

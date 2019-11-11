@@ -5,7 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="">
    <meta name="author" content="">
-   <title>Online</title>
+   <title>Error Page</title>
 
     <link href="bootstrap3/dist/bootstrap.css" rel="stylesheet">
 
@@ -29,7 +29,7 @@
       <div class="col-md-9">
 
 
-         <h1>Online Store</h1>
+         <h1>oops something went wrong</h1>
 
 
 

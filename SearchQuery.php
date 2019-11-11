@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Online</title>
+    <title>Search</title>
 
     <link href="bootstrap3/dist/bootstrap.css" rel="stylesheet">
 
@@ -37,7 +38,7 @@
             <div class="panel panel-heading">Search Results</div><div id="container-outer"><div id="container-inner">
             <?php
                 if($_POST['search'] !== '') {
-                    $query = mysqli_query($db, "SELECT * FROM `Pokemon` where Type1 LIKE '" . $_POST['search'] . "' OR Type2 LIKE '" . $_POST['search'] . "' OR DexNumber LIKE '" . $_POST['search'] . "' OR PokemonName Like '%" . $_POST['search'] . "%'or PokemonName LIKE '%". $_POST['search']."%';");
+                    $query = mysqli_query($mysqli, "SELECT * FROM `Pokemon` where Type1 LIKE '" . $_POST['search'] . "' OR Type2 LIKE '" . $_POST['search'] . "' OR DexNumber LIKE '" . $_POST['search'] . "' OR PokemonName Like '%" . $_POST['search'] . "%'or PokemonName LIKE '%". $_POST['search']."%';");
 
                     while ($pull_data = $query->fetch_assoc()) {
                         echo '<div class="well">'.

@@ -32,9 +32,9 @@
 
               <?php
 
-              $sql_display = mysqli_query($db, 'SELECT * FROM Pokemon WHERE PokemonID = '.$_GET['id'].' ;');
+              $sql_display = mysqli_query($mysqli, 'SELECT * FROM Pokemon WHERE PokemonID = '.$_GET['id'].' ;');
 
-              $sql_Tier = mysqli_query($db,'SELECT Tier FROM Tier WHERE PokemonID ='.$_GET['id'].' ;');
+              $sql_Tier = mysqli_query($mysqli,'SELECT Tier FROM Tier WHERE PokemonID ='.$_GET['id'].' ;');
               $pull_Tier = $sql_Tier->fetch_assoc();
 
               while ($pull_data = $sql_display->fetch_assoc()) {
@@ -53,12 +53,12 @@
                       '<h4>Pokemon Information:</h4></div>' .
                       '<div class="panel-body" ><p><span class="label label-primary">Name:</span> ' . $pull_data['PokemonName'] . '</p>' .
                       '<p><span class="label label-info">Pokedex Number:</span> ' . $pull_data['DexNumber'] . '</p>' .
-                      '<p><span class="label label-danger">Base HP:</span> ' . $pull_data['BaseHP'] . '</p>' .
-                      '<p><span class="label label-warning">Base Atk:</span> ' . $pull_data['BaseAtk'] . '</p>' .
-                      '<p><span class="label label-success">Base Def:</span> ' . $pull_data['BaseDef'] . '</p>' .
-                      '<p><span class="label label-default">Base SpA:</span> ' . $pull_data['BaseSpA'] . '</p>' .
-                      '<p><span class="label label-default">Base SpD:</span> ' . $pull_data['BaseSpD'] . '</p>' .
-                      '<p><span class="label label-default">Base Spe:</span> ' . $pull_data['BaseSpe'] . '</p>' .
+                      '<p><span class="label label-danger">Base HP:</span> <meter value="' . $pull_data['BaseHP'] . '" min="0" max="100"></meter>  ' . $pull_data['BaseHP'] . '</p>' .
+                      '<p><span class="label label-warning">Base Atk:</span> <meter value="' . $pull_data['BaseAtk'] . '" min="0" max="100"></meter>  ' . $pull_data['BaseAtk'] . '</p>' .
+                      '<p><span class="label label-success">Base Def:</span> <meter value="' . $pull_data['BaseDef'] . '" min="0" max="100"></meter>  ' . $pull_data['BaseDef'] . '</p>' .
+                      '<p><span class="label label-default">Base SpA:</span> <meter value="' . $pull_data['BaseSpA'] . '" min="0" max="100"></meter>  ' . $pull_data['BaseSpA'] . '</p>' .
+                      '<p><span class="label label-default">Base SpD:</span> <meter value="' . $pull_data['BaseSpD'] . '" min="0" max="100"></meter>  ' . $pull_data['BaseSpD'] . '</p>' .
+                      '<p><span class="label label-default">Base Spe:</span> <meter value="' . $pull_data['BaseSpe'] . '" min="0" max="100"></meter>  ' . $pull_data['BaseSpe'] . '</p>' .
                       '<p><span class="label label-warning">Tier:</span> ' . $pull_Tier['Tier'] . '</p>';
 
                   if ($pull_data['Type2'] != null) {
@@ -73,7 +73,7 @@
                       '</div>' .
                       '</div>';
 
-                  $sql_place = mysqli_query($db, 'SELECT * FROM Places WHERE PokemonID =' . $_GET['id'] . ' ;');
+                  $sql_place = mysqli_query($mysqli, 'SELECT * FROM Places WHERE PokemonID =' . $_GET['id'] . ' ;');
                   echo '<div class="panel panel-primary" ><div class="panel-heading" ><h5>Where to Find This Pokemon:</h5></div><div class="panel-body" ><p>';
                   while ($pull_place = $sql_place->fetch_assoc()) {
                       echo $pull_place['Place'];
@@ -90,7 +90,7 @@
         </div>
     <?php
     echo '<div class="panel panel-primary"><div class="panel-heading"><h4>Evolution Chart:</h4></div><div class="panel-body">';
-    $sql_display = mysqli_query($db, 'SELECT * FROM Evolution WHERE evo1 = '.$_GET['id'].'  or evo2 = '.$_GET['id'].'  or evo3 = '.$_GET['id'].' or evo4 = '.$_GET['id'].' or evo5 = '.$_GET['id'].' ;');
+    $sql_display = mysqli_query($mysqli, 'SELECT * FROM Evolution WHERE evo1 = '.$_GET['id'].'  or evo2 = '.$_GET['id'].'  or evo3 = '.$_GET['id'].' or evo4 = '.$_GET['id'].' or evo5 = '.$_GET['id'].' ;');
 
     $evo1 = 0;
     $evo2 = 0;
@@ -129,49 +129,49 @@
 
 
     if ($evo1 != 0 && $evo2 != 0 && $evo3 != 0 && $evo4 != 0 && $evo5 != 0 ) {
-        $display_ev = mysqli_query($db, 'SELECT * FROM `Pokemon` WHERE PokemonID = '. $evo1 .' or PokemonID = '. $evo2 .' or PokemonID = '. $evo3 .' or PokemonID = '. $evo4 .' or PokemonID = '. $evo5 .';');
+        $display_ev = mysqli_query($mysqli, 'SELECT * FROM `Pokemon` WHERE PokemonID = '. $evo1 .' or PokemonID = '. $evo2 .' or PokemonID = '. $evo3 .' or PokemonID = '. $evo4 .' or PokemonID = '. $evo5 .';');
 
         while ($pull_data = $display_ev->fetch_assoc()) {
                 echo '<div class="col-md-2"><a href="PokeProfile.php?id=' . $pull_data['PokemonID'] .'">'.
-                    '<img  class="img-thumbnail" style="height: 100%; width: 100%;" src="./images/icons/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
+                    '<img  class="img-thumbnail" style="height: 100%; width: 100%;" src="./json-sql/sprites/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
                     '</a></div>';
         }
 
     } else if ($evo1 != 0 && $evo2 != 0 && $evo3 == 0 && $evo4 == 0 && $evo5 == 0 ) {
-        $display_ev = mysqli_query($db, 'SELECT * FROM `Pokemon` WHERE PokemonID = '. $evo1 .' or PokemonID = '. $evo2 .';');
+        $display_ev = mysqli_query($mysqli, 'SELECT * FROM `Pokemon` WHERE PokemonID = '. $evo1 .' or PokemonID = '. $evo2 .';');
 
         while ($pull_data = $display_ev->fetch_assoc()) {
             echo '<div class="col-md-3"><a href="PokeProfile.php?id=' . $pull_data['PokemonID'] .'">'.
-                '<img  class="img-thumbnail" style="height: 80%; width:80%;" src="./images/icons/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
+                '<img  class="img-thumbnail" style="height: 80%; width:80%;" src="./json-sql/sprites/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
                 '</a></div>';
 
 
         }
 
     } else if ($evo1 != 0 && $evo2 == 0 && $evo3 == 0 && $evo4 == 0 && $evo5 == 0) {
-        $display_ev = mysqli_query($db, 'SELECT * FROM `Pokemon` WHERE PokemonID = ' . $evo1 . ';');
+        $display_ev = mysqli_query($mysqli, 'SELECT * FROM `Pokemon` WHERE PokemonID = ' . $evo1 . ';');
 
         while ($pull_data = $display_ev->fetch_assoc()) {
             echo '<div class="col-md-3"><a href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">' .
-                '<img class="img-thumbnail" style="height: 80%; width:80%;" src="./images/icons/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
+                '<img class="img-thumbnail" style="height: 80%; width:80%;" src="./json-sql/sprites/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
                 '</a></div>'.'<p>'.$pull_data['PokemonName'].' is not known to evolve into or from any other Pokémon. </p>';
 
         }
     } else if ($evo1 != 0 && $evo2 != 0 && $evo3 != 0 && $evo4 == 0 && $evo5 == 0) {
-    $display_ev = mysqli_query($db, 'SELECT * FROM `Pokemon` WHERE PokemonID = ' . $evo1 . ' or PokemonID = ' . $evo2 . ' or PokemonID = ' . $evo3 . ';');
+    $display_ev = mysqli_query($mysqli, 'SELECT * FROM `Pokemon` WHERE PokemonID = ' . $evo1 . ' or PokemonID = ' . $evo2 . ' or PokemonID = ' . $evo3 . ';');
 
     while ($pull_data = $display_ev->fetch_assoc()) {
         echo '<div class="col-md-3"><a href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">' .
-            '<img class="img-thumbnail" style="height: 80%; width:80%;" src="./images/icons/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
+            '<img class="img-thumbnail" style="height: 80%; width:80%;" src="./json-sql/sprites/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
             '</a></div>';
 
         }
     } else if ($evo1 != 0 && $evo2 != 0 && $evo3 != 0 && $evo4 != 0 && $evo5 == 0) {
-    $display_ev = mysqli_query($db, 'SELECT * FROM `Pokemon` WHERE PokemonID = ' . $evo1 . ' or PokemonID = ' . $evo2 . ' or PokemonID = ' . $evo3 . ' or PokemonID = ' . $evo4 . ' ;');
+    $display_ev = mysqli_query($mysqli, 'SELECT * FROM `Pokemon` WHERE PokemonID = ' . $evo1 . ' or PokemonID = ' . $evo2 . ' or PokemonID = ' . $evo3 . ' or PokemonID = ' . $evo4 . ' ;');
 
     while ($pull_data = $display_ev->fetch_assoc()) {
         echo '<div class="col-md-3"><a href="PokeProfile.php?id=' . $pull_data['PokemonID'] . '">' .
-            '<img class="img-thumbnail" style="height: 80%; width:80%;" src="./images/icons/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
+            '<img class="img-thumbnail" style="height: 80%; width:80%;" src="./json-sql/sprites/' . $pull_data['ImagePath'] . '" alt="pokemon image"/>' .
             '</a></div>';
 
         }
@@ -180,15 +180,13 @@
     echo '</div>'.
     '</div>';
     ?>
-
-
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h4>Comments</h4>
         </div>
         <div class="panel-body">
             <?php
-            $sql_message = mysqli_query($db, 'SELECT UserName, Message FROM Message, Pokemon Where Pokemon.PokemonID = '. $_GET['id'] .' AND Pokemon.PokemonName LIKE Message.PokemonName'.';');
+            $sql_message = mysqli_query($mysqli, 'SELECT UserName, Message FROM Message, Pokemon Where Pokemon.PokemonID = '. $_GET['id'] .' AND Pokemon.PokemonName LIKE Message.PokemonName'.';');
 
             while($pull_msg = $sql_message->fetch_assoc()){
                 echo '<p>'.$pull_msg['UserName'] . ' says: ' . $pull_msg['Message'].'</p>';
@@ -220,7 +218,7 @@
                     <ol class="breadcrumb">
                         <li>
                             <?php
-                            $sql_pokeNames = mysqli_query($db, 'SELECT PokemonName FROM Pokemon Where PokemonID = '.$_GET['id'] .';');
+                            $sql_pokeNames = mysqli_query($mysqli, 'SELECT PokemonName FROM Pokemon Where PokemonID = '.$_GET['id'] .';');
 
                             while ($pull_name = $sql_pokeNames->fetch_assoc()) {
                                 echo '<option value="' . $pull_name['PokemonName'] . '" id="' . $_GET['id'] . '" name = "PokemonName">' . '<div>'. $pull_name['PokemonName'] .'</div></option>';
@@ -254,7 +252,7 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
 
     if($name !=''||$msg !='' || $pokemon !=''){
 
-        $sql_insert = mysqli_query($db,"INSERT INTO Message(UserName, Message, PokemonName) VALUES ('$name','$msg', '$pokemon')");
+        $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UserName, Message, PokemonName) VALUES ('$name','$msg', '$pokemon')");
 
         echo "<br/><br/><span>Data Inserted successfully...!!</span>";
     }
@@ -262,7 +260,7 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
         echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
     }
 }
-mysqli_close($db); // Closing Connection with Server
+mysqli_close($mysqli); // Closing Connection with Server
 ?>
 
 

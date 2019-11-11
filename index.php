@@ -1,9 +1,21 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PokeLookUp</title>
+    <title>PokemonPokedex</title>
 </head>
-<body  background = "images/poketexture1.jpg">
+<body background = "images/poketexture1.jpg">
+
 <?php include 'header.php'; ?>
 
 
@@ -15,18 +27,15 @@
 
 
             <div class="col-md-9">  <!-- start main content column -->
-                <div class="row">
-                    <div class="col-md-12">
 
-                    </div>
-            </div>
 
           <div class="panel panel-primary">
+
               <div class="panel-heading">
-                  <h4>Welcome to PokemonPokedex</h4>
+                  <h4>Hey <b><?php echo htmlspecialchars($_SESSION["username"]); ?> </b>Welcome to PokemonPokedex !!</h4>
+
               </div>
                 <div class="panel-body">
-                  <p class = "panel-primary" style="margin-bottom: 5%"> Welcome Trainer!! PokemonPokedex allows you to view all Pokemon from all games so far with all their stats, enjoy your stay.</p>
 
                   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                       <!--  <div style="padding-bottom:10px;"><h3>All Regions Map</h3></div> -->
@@ -35,10 +44,19 @@
                               <img src="images/all%20pokemon.jpg"/>
                           </div>
                       </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <p style="margin-top: 10px; margin-bottom: 0">
+                                  <a style="margin-right: 460px " href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+                                  <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+                              </p>
+                          </div>
+                      </div>
 
                 </div>
             </div>
         </div> <!-- panel ends here -->
+
     </div>
 </div>
 
