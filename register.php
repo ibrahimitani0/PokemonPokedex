@@ -141,9 +141,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
-            <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <label>Email</label>
-                <input type="Email" name="email" class="form-control" value="<?php echo $email; ?>">
+                <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
             </div>
             <div class="form-group">
