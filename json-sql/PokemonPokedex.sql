@@ -1281,7 +1281,7 @@ INSERT INTO `Pokemon` (`PokemonID`, `PokemonName`, `DexNumber`, `BaseHP`, `BaseA
 (92, 'Doduo', 84, 35, 85, 45, 35, 35, 75, 'Normal', 'Flying', '84.png', 0),
 (93, 'Dodrio', 85, 60, 110, 70, 60, 60, 100, 'Normal', 'Flying', '85.png', 0),
 (94, 'Seel', 86, 65, 45, 55, 45, 70, 45, 'Water', '', '86.png', 0),
-(95, 'Dewgong', 87, 90, 70, 80, 70, 95, 70, 'Water', 'Ice', '07.png', 0),
+(95, 'Dewgong', 87, 90, 70, 80, 70, 95, 70, 'Water', 'Ice', '87.png', 0),
 (96, 'Grimer', 88, 80, 80, 50, 40, 50, 25, 'Poison', '', '88.png', 0),
 (97, 'Muk', 89, 105, 105, 75, 65, 100, 50, 'Poison', '', '89.png', 0),
 (98, 'Shellder', 90, 30, 65, 100, 45, 25, 40, 'Water', '', '90.png', 0),
