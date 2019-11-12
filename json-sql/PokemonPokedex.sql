@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 12, 2019 at 12:56 AM
+-- Generation Time: Nov 12, 2019 at 06:54 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -312,7 +312,7 @@ INSERT INTO `Legendary` (`PokemonID`, `Legendary`) VALUES
 --
 
 CREATE TABLE `Message` (
-  `UserName` varchar(255) NOT NULL,
+  `UName` varchar(255) NOT NULL,
   `Message` varchar(255) NOT NULL,
   `PokemonName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -321,7 +321,7 @@ CREATE TABLE `Message` (
 -- Dumping data for table `Message`
 --
 
-INSERT INTO `Message` (`UserName`, `Message`, `PokemonName`) VALUES
+INSERT INTO `Message` (`UName`, `Message`, `PokemonName`) VALUES
 ('Sarah', 'i love this pokemon', 'Bulbasaur'),
 ('david', 'i love this pokemon', 'Ekans'),
 ('david', 'i want bulbasaur', 'Bulbasaur'),
@@ -337,7 +337,12 @@ INSERT INTO `Message` (`UserName`, `Message`, `PokemonName`) VALUES
 ('Fred', 'i love this pokemon', 'Caterpie'),
 ('oliver', 'i want this pokemon', 'Caterpie'),
 ('Nathan', 'anyone wanna trade with me? i have a shiny butterfree', 'Butterfree'),
-('Neil', 'i want a vapreon', 'Eevee');
+('Neil', 'i want a vapreon', 'Eevee'),
+('ibrahim', 'this was my first Pokemon', 'Bulbasaur'),
+('ibrahim', 'I would always like this pokemon to be on my team', 'Charmander'),
+('Sean', 'this pokemon is dope', 'Charmander'),
+('Sean', 'love pokemon', 'Ivysaur'),
+('Sean', 'love pokemon', 'Ivysaur');
 
 -- --------------------------------------------------------
 
@@ -1281,7 +1286,7 @@ INSERT INTO `Pokemon` (`PokemonID`, `PokemonName`, `DexNumber`, `BaseHP`, `BaseA
 (92, 'Doduo', 84, 35, 85, 45, 35, 35, 75, 'Normal', 'Flying', '84.png', 0),
 (93, 'Dodrio', 85, 60, 110, 70, 60, 60, 100, 'Normal', 'Flying', '85.png', 0),
 (94, 'Seel', 86, 65, 45, 55, 45, 70, 45, 'Water', '', '86.png', 0),
-(95, 'Dewgong', 87, 90, 70, 80, 70, 95, 70, 'Water', 'Ice', '87.png', 0),
+(95, 'Dewgong', 87, 90, 70, 80, 70, 95, 70, 'Water', 'Ice', '07.png', 0),
 (96, 'Grimer', 88, 80, 80, 50, 40, 50, 25, 'Poison', '', '88.png', 0),
 (97, 'Muk', 89, 105, 105, 75, 65, 100, 50, 'Poison', '', '89.png', 0),
 (98, 'Shellder', 90, 30, 65, 100, 45, 25, 40, 'Water', '', '90.png', 0),
@@ -2214,7 +2219,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'ibrahim', '$2y$10$FrNU2JE/J0bfoRsBps9hdO.kKvJ7e15xEB3qriSItfaOli7mh5V8S', '2019-11-11 21:24:08');
+(1, 'ibrahim', '$2y$10$FrNU2JE/J0bfoRsBps9hdO.kKvJ7e15xEB3qriSItfaOli7mh5V8S', '2019-11-11 21:24:08'),
+(2, 'Sean', '$2y$10$swgxzw53GLm84zHCS1DeV.7TZGcEoGZP5i7Is/R9aZ.1GvLA8OeNO', '2019-11-12 17:45:26');
 
 --
 -- Indexes for dumped tables
@@ -2247,7 +2253,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

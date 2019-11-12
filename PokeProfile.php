@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,10 +196,10 @@
         </div>
         <div class="panel-body">
             <?php
-            $sql_message = mysqli_query($mysqli, 'SELECT UserName, Message FROM Message, Pokemon Where Pokemon.PokemonID = '. $_GET['id'] .' AND Pokemon.PokemonName LIKE Message.PokemonName'.';');
+            $sql_message = mysqli_query($mysqli, 'SELECT UName, Message FROM Message, Pokemon Where Pokemon.PokemonID = '. $_GET['id'] .' AND Pokemon.PokemonName LIKE Message.PokemonName'.';');
 
             while($pull_msg = $sql_message->fetch_assoc()){
-                echo '<p>'.$pull_msg['UserName'] . ' says: ' . $pull_msg['Message'].'</p>';
+                echo '<p>'.$pull_msg['UName'] . ' says: ' . $pull_msg['Message'].'</p>';
             }
 
 
@@ -205,9 +215,6 @@
         </div>
         <div class="panel-body">
             <form class="navbar-form " method="POST">
-                <div class="form-group" style="margin-bottom: 10px;">
-                    <input type="text" class="form-control" name="user" placeholder="Name" style="width: 100px;">
-                </div>
                 <div class="form-group" style="margin-bottom: 10px;">
                     <input type="text" class="form-control" name="msg" placeholder="comment" style="width: 800px;">
                 </div>
@@ -246,18 +253,20 @@
 <?php
 
 if(isset($_POST['share'])){ // Fetching variables of the form which travels in URL
-    $name = $_POST['user'];
+
+    $name = $_SESSION["username"];
+
     $msg = $_POST['msg'];
     $pokemon = $_POST['pokemon'];
 
-    if($name !=''||$msg !='' || $pokemon !=''){
+    if($name !=''|| $msg !='' || $pokemon !=''){
 
-        $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UserName, Message, PokemonName) VALUES ('$name','$msg', '$pokemon')");
+        $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '$pokemon')");
 
-        echo "<br/><br/><span>Data Inserted successfully...!!</span>";
+        echo "<br/><br/><span>Message Posted Successfully...!!</span>";
     }
     else{
-        echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+        echo "<p>Failed To Post Message<br/> Some Fields are Blank....!!</p>";
     }
 }
 mysqli_close($mysqli); // Closing Connection with Server
