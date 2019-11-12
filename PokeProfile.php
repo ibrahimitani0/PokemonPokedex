@@ -238,7 +238,7 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
 
 $Sql_Name = mysqli_query($mysqli, 'SELECT PokemonID, PokemonName FROM Pokemon WHERE PokemonID = '.$_GET['id'].' ;');
 
-$pull_PokeName = $sql_Tier->fetch_assoc())
+$pull_PokeName = $Sql_Name->fetch_assoc())
 
 
 
