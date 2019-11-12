@@ -66,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } elseif(!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)){
         $email_err = "Invalid email format";
     } else{
-        $email = trim($_POST["phone"]);
+        $email = trim($_POST["email"]);
     }
 
     // Check input errors before inserting in database
