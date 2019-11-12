@@ -218,24 +218,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <div class="form-group" style="margin-bottom: 10px;">
                     <input type="text" class="form-control" name="msg" placeholder="comment" style="width: 800px;">
                 </div>
-
-                <div style="margin-bottom: 10px;">
-                <select class="form-group" name="pokemon">
-                    <option value="PokemonName" selected disabled>Pokemon Name</option>
-                    <ol class="breadcrumb">
-                        <li>
-                            <?php
-                            $sql_pokeNames = mysqli_query($mysqli, 'SELECT PokemonName FROM Pokemon Where PokemonID = '.$_GET['id'] .';');
-
-                            while ($pull_name = $sql_pokeNames->fetch_assoc()) {
-                                echo '<option value="' . $pull_name['PokemonName'] . '" id="' . $_GET['id'] . '" name = "PokemonName">' . '<div>'. $pull_name['PokemonName'] .'</div></option>';
-
-                            }
-                            ?>
-                        </li>
-                    </ol>
-                </select>
-                </div>
                 <div class="form-group">
                 <button style="width: 100px;" type="submit" name="share" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span></button>
                 </div>
@@ -253,11 +235,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <?php
 
 if(isset($_POST['share'])){ // Fetching variables of the form which travels in URL
+$Sql_Name = mysqli_query($mysqli, 'SELECT * FROM Pokemon WHERE PokemonID = '.$_GET['id'].' ;');
+$pull_PokeName = $sql_Tier->fetch_assoc();
 
     $name = $_SESSION["username"];
 
     $msg = $_POST['msg'];
-    $pokemon = $_POST['pokemon'];
+
+    $pokemon = $pull_PokeName['PokemonName'];
 
     if($name !=''|| $msg !='' || $pokemon !=''){
 
