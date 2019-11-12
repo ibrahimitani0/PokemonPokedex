@@ -235,18 +235,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <?php
 
 if(isset($_POST['share'])){ // Fetching variables of the form which travels in URL
-$Sql_Name = mysqli_query($mysqli, 'SELECT * FROM Pokemon WHERE PokemonID = '.$_GET['id'].' ;');
-$pull_PokeName = $sql_Tier->fetch_assoc();
+$Sql_Name = mysqli_query($mysqli, 'SELECT PokemonName FROM Pokemon WHERE PokemonID = '.$_GET['id'].' ;');
+
+$pull_PokeName = $sql_Tier->fetch_assoc())
+
+
 
     $name = $_SESSION["username"];
 
     $msg = $_POST['msg'];
 
-    $pokemon = $pull_PokeName['PokemonName'];
 
-    if($name !=''|| $msg !='' || $pokemon !=''){
+    if($name !='' || $msg !='' || $pull_PokeName['PokemonName'] !=''){
 
-        $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '$pokemon')");
+        $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', $pull_PokeName['PokemonName'])");
 
         echo "<br/><br/><span>Message Posted Successfully...!!</span>";
     }
