@@ -2211,6 +2211,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  'phoneNum' char(10) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2219,8 +2220,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'ibrahim', '$2y$10$FrNU2JE/J0bfoRsBps9hdO.kKvJ7e15xEB3qriSItfaOli7mh5V8S', '2019-11-11 21:24:08'),
-(2, 'Sean', '$2y$10$swgxzw53GLm84zHCS1DeV.7TZGcEoGZP5i7Is/R9aZ.1GvLA8OeNO', '2019-11-12 17:45:26');
+(1, 'ibrahim', '$2y$10$FrNU2JE/J0bfoRsBps9hdO.kKvJ7e15xEB3qriSItfaOli7mh5V8S','2695015405', '2019-11-11 21:24:08'),
+(2, 'Sean', '$2y$10$swgxzw53GLm84zHCS1DeV.7TZGcEoGZP5i7Is/R9aZ.1GvLA8OeNO','2485952214', '2019-11-12 17:45:26');
 
 --
 -- Indexes for dumped tables
