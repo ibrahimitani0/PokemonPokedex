@@ -257,6 +257,7 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
     $name = $_SESSION["username"];
 
     $msg = $_POST['msg'];
+    
     $pokemon = $_POST['pokemon'];
 
     if($name !=''|| $msg !='' || $pokemon !=''){
