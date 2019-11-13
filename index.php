@@ -63,27 +63,30 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
-                            $SNS = "SELECT id FROM users WHERE username = ? AND email = ?";
+                            $SNS = "SELECT id, email FROM users WHERE username = ?";
+
+                            $SNS_email = mysqli_query($mysqli, 'SELECT email FROM users WHERE username = '. trim($_SESSION["username"]). ';');
+                            $pull_email = $SNS_email->fetch_assoc();
 
                             if($select = $mysqli->prepare($SNS)) {
                                 // Bind variables to the prepared statement as parameters
-                                $select->bind_param("ss", $user, $email);
+                                $select->bind_param("s", $user);
 
                                 // Set parameters
                                 $user = trim($_SESSION["username"]);
-                                $email = trim($_SESSION["email"]);
-
 
                                 // Attempt to execute the prepared statement
                                 if ($select->execute()) {
                                     // store result
                                     $select->store_result();
 
-                                    if ($select->num_rows == 2) {
+                                    if ($select->num_rows == 1) {
                                         echo $user;
-                                        echo $email;
                                     } else {
                                         echo "no user name";
+                                    }
+                                    while ($pull_email = $SNS_email->fetch_assoc()){
+                                        echo $pull_email['email'];
                                     }
                                 }
                                 $select->close();
