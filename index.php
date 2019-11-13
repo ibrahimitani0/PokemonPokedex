@@ -79,7 +79,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     // store result
                                     $select->store_result();
 
-                                    if ($select->num_rows == 1) {
+                                    if ($select->num_rows == 2) {
                                         echo $user;
                                         echo $email;
                                     } else {
