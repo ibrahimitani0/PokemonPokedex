@@ -63,14 +63,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
+                            echo htmlspecialchars($_SESSION["username"]);
 
                             $SNS = mysqli_query($mysqli,'SELECT id, username, email FROM users WHERE username =_'.$_SESSION["username"].';');
+
                             while ($pull_SNS = $SNS->fetch_assoc()) {
                                 echo '<p> ' . $pull_SNS['username'].'</p>';
 
 
                             }
                             ?>
+                          </div>
                           </div>
                       </div>
 
