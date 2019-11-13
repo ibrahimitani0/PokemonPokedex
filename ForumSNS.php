@@ -54,9 +54,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <?php
 
 
-                  $sql_SNS = mysqli_query($mysqli, 'SELECT username FROM users WHERE users.username = '. htmlspecialchars($_SESSION["username"]) .'";');
+                  $sql_SNS = mysqli_query($mysqli, 'SELECT username FROM users WHERE users.username = "ibrahim";');
                   while ($pull_data = $sql_SNS->fetch_assoc()) {
-                      echo '<p style="text-align: center"> hello : ' . $pull_data["username"] . '</p>>';
+                      echo '<p style="text-align: center"> hello : ' . $pull_data['username'] . '</p>>';
                   }
 
 
