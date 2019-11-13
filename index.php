@@ -78,7 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     // store result
                                     $select->store_result();
 
-                                    if ($select->num_rows == 1) {
+                                    if ($select->num_rows == 1 && $select->num_rows == 3) {
                                         echo $user;
                                         echo $eml;
                                     } else {
