@@ -56,7 +56,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   while ($pull_SNS = $sql_SNS->fetch_assoc()) {
                       echo '<div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h4 style="text-align: center">' . $pull_SNS['username'] . '
+                                <h4 style="text-align: center"> hello : ' . $pull_SNS['username'] . '
                                 </h4>
                                 </div></div>';
                   }
