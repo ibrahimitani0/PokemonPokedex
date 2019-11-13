@@ -85,14 +85,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     } else {
                                         echo "no user name";
                                     }
-                                    while ($pull_email = $SNS_email->fetch_assoc()){
-                                        echo $pull_email['email'];
-                                    }
                                 }
                                 $select->close();
                             }
                             $mysqli->close();
-
+                            
+                            while ($pull_email = $SNS_email->fetch_assoc()){
+                                echo $pull_email['email'];
+                            }
+                            mysqli_close($mysqli); // Closing Connection with Server
                             ?>
                           </div>
                           </div>
