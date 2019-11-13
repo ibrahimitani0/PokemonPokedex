@@ -63,14 +63,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
-                            $SNS = "SELECT id FROM users WHERE username = ?";
+                            $SNS = "SELECT id, email FROM users WHERE username = ?";
 
                             if($select = $mysqli->prepare($SNS)) {
                                 // Bind variables to the prepared statement as parameters
-                                $select->bind_param("s", $user);
+                                $select->bind_param("ss", $user,$eml);
 
                                 // Set parameters
                                 $user = trim($_SESSION["username"]);
+                                $eml = $select['email'];
 
                                 // Attempt to execute the prepared statement
                                 if ($select->execute()) {
@@ -79,6 +80,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                                     if ($select->num_rows == 1) {
                                         echo $user;
+                                        echo $eml;
                                     } else {
                                         echo "no user name";
                                     }
