@@ -55,6 +55,27 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                 </div>
             </div>
+
+              <div class="panel-body">
+
+                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                      <!--  <div style="padding-bottom:10px;"><h3>All Regions Map</h3></div> -->
+                      <div class="row">
+                          <div class="col-md-12">
+                            <?php
+
+                            $SNS = mysqli_query($mysqli,'SELECT id, username, email FROM users WHERE username =_'.$_SESSION["username"].';');
+                            while ($pull_SNS = $SNS->fetch_assoc()) {
+                                echo '<p> ' . $pull_SNS['username'].'</p>';
+
+
+                            }
+                            ?>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
         </div> <!-- panel ends here -->
 
     </div>

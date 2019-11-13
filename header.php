@@ -64,11 +64,6 @@ include 'dbinfo.php';
                             echo("class='active'");
                         }
                         ?>><a href="Moves.php"><img class="img-responsive img-logo" style="width: 60px; height: 22px; " src="images/starterpokemons.jpeg"></a></li>
-                        <li <?php
-                        if (basename($_SERVER['SCRIPT_FILENAME']) == 'ForumSNS.php') {
-                            echo("class='active'");
-                        }
-                        ?>><a href="ForumSNS.php"><img class="img-responsive img-logo" style="width: 60px; height: 22px; " src="images/pokedex2.png"></a></li>
                     </ul>
                     <form class="navbar-form navbar-right" method="POST" action="SearchQuery.php">
                         <div class="form-group">
