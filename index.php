@@ -63,11 +63,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
-                            $SNS = "SELECT id, email FROM users WHERE username = ?";
-
-                            $SNS_email = mysqli_query($mysqli, 'SELECT email FROM users WHERE username = '. trim($_SESSION["username"]). ';');
-                            $pull_email = $SNS_email->fetch_assoc();
-
+                            $SNS = "SELECT id FROM users WHERE username = ?";
+                            
                             if($select = $mysqli->prepare($SNS)) {
                                 // Bind variables to the prepared statement as parameters
                                 $select->bind_param("s", $user);
@@ -89,11 +86,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                 $select->close();
                             }
                             $mysqli->close();
-                            
-                            while ($pull_email = $SNS_email->fetch_assoc()){
-                                echo $pull_email['email'];
-                            }
-                            mysqli_close($mysqli); // Closing Connection with Server
+
                             ?>
                           </div>
                           </div>
