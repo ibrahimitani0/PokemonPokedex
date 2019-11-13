@@ -65,10 +65,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <?php
                             echo htmlspecialchars($_SESSION["username"]);
 
-                            $SNS = mysqli_query($mysqli,'SELECT id, username, email FROM users WHERE username =_'.$_SESSION["username"].';');
+                            $SNS = mysqli_query($mysqli,'SELECT PokemonName FROM Pokemon ;');
 
                             while ($pull_SNS = $SNS->fetch_assoc()) {
-                                echo '<p> ' . $pull_SNS['username'].'</p>';
+                                echo '<p> ' . $pull_SNS['PokemonName'].'</p>';
 
 
                             }
