@@ -63,16 +63,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
-                            $SNS = "SELECT id FROM users WHERE username = ?";
-
-                            $SNS_Email = "SELECT email FROM users WHERE username = ?";
+                            $SNS = "SELECT id FROM users WHERE username = ? AND email = ?";
 
                             if($select = $mysqli->prepare($SNS)) {
                                 // Bind variables to the prepared statement as parameters
-                                $select->bind_param("s", $user);
+                                $select->bind_param("ss", $user, $email);
 
                                 // Set parameters
                                 $user = trim($_SESSION["username"]);
+                                $email = trim($_SESSION["email"]);
+
 
                                 // Attempt to execute the prepared statement
                                 if ($select->execute()) {
@@ -81,33 +81,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                                     if ($select->num_rows == 1) {
                                         echo $user;
+                                        echo $email;
                                     } else {
                                         echo "no user name";
                                     }
                                 }
                                 $select->close();
-                            }
-                            $mysqli->close();
-
-                            if($select_eml = $mysqli->prepare($SNS_Email)) {
-                                // Bind variables to the prepared statement as parameters
-                                $select_eml->bind_param("s", $eml);
-
-                                // Set parameters
-                                $eml = $select_eml->fetch('email');
-
-                                // Attempt to execute the prepared statement
-                                if ($select_eml->execute()) {
-                                    // store result
-                                    $select_eml->store_result();
-
-                                    if ($select_eml->num_rows == 1) {
-                                        echo $eml;
-                                    } else {
-                                        echo "no user name";
-                                    }
-                                }
-                                $select_eml->close();
                             }
                             $mysqli->close();
 
