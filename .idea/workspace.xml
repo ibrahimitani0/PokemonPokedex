@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff2c25-d419-41b8-83c6-9793bc4ef0bf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ForumSNS.php" beforeDir="false" afterPath="$PROJECT_DIR$/ForumSNS.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573670838557</updated>
       <workItem from="1573670839748" duration="41000" />
-      <workItem from="1573671499824" duration="919000" />
+      <workItem from="1573671499824" duration="987000" />
     </task>
     <servers />
   </component>

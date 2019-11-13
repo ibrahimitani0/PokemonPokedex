@@ -58,7 +58,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <div class="panel-heading">
                                 <h4 style="text-align: center"> hello : ' . $pull_SNS['username'] . '
                                 </h4>
-                                </div></div>';
+                                </div>';
                   }
 
 
