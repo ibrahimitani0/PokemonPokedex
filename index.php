@@ -63,24 +63,24 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
-                            $SNS = "SELECT id, email FROM users WHERE username = ?";
+                            $SNS = "SELECT id FROM users WHERE username = ?";
+
+                            $SNS_Email = "SELECT email FROM users WHERE username = ?";
 
                             if($select = $mysqli->prepare($SNS)) {
                                 // Bind variables to the prepared statement as parameters
-                                $select->bind_param("ss", $user,$eml);
+                                $select->bind_param("s", $user);
 
                                 // Set parameters
                                 $user = trim($_SESSION["username"]);
-                                $eml = $select['email'];
 
                                 // Attempt to execute the prepared statement
                                 if ($select->execute()) {
                                     // store result
                                     $select->store_result();
 
-                                    if ($select->num_rows == 1 && $select->num_rows == 3) {
+                                    if ($select->num_rows == 1) {
                                         echo $user;
-                                        echo $eml;
                                     } else {
                                         echo "no user name";
                                     }
@@ -88,6 +88,29 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                 $select->close();
                             }
                             $mysqli->close();
+
+                            if($select_eml = $mysqli->prepare($SNS_Email)) {
+                                // Bind variables to the prepared statement as parameters
+                                $select_eml->bind_param("s", $eml);
+
+                                // Set parameters
+                                $eml = $select_eml->fetch('email');
+
+                                // Attempt to execute the prepared statement
+                                if ($select_eml->execute()) {
+                                    // store result
+                                    $select_eml->store_result();
+
+                                    if ($select_eml->num_rows == 1) {
+                                        echo $eml;
+                                    } else {
+                                        echo "no user name";
+                                    }
+                                }
+                                $select_eml->close();
+                            }
+                            $mysqli->close();
+
                             ?>
                           </div>
                           </div>
