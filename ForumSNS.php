@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +48,21 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4>Welcome to PokemonPokedex</h4>
+                    <h4>Welcome to PokemonPokedex Forums</h4>
                 </div>
                 <div class="panel-body">
+                  <?php
+                  $sql_SNS = mysqli_query($mysqli, 'SELECT * FROM users WHERE users.username = '.$_SESSION['loggedin'].';');
+                  while ($pull_SNS = $sql_SNS->fetch_assoc()) {
+                      echo '<div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 style="text-align: center">' . $pull_SNS['username'] . '
+                                </h4>
+                                </div></div>';
+                  }
 
 
-
+                  ?>
                 </div>
                     </div>
                 </div>
