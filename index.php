@@ -67,10 +67,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                             if($select = $mysqli->prepare($SNS)) {
                                 // Bind variables to the prepared statement as parameters
-                                $select->bind_param("s", $param_username);
+                                $select->bind_param("s", $user);
 
                                 // Set parameters
-                                $param_username = trim($_POST["username"]);
+                                $user = trim($_SESSION["username"]);
 
                                 // Attempt to execute the prepared statement
                                 if ($select->execute()) {
@@ -78,7 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     $select->store_result();
 
                                     if ($select->num_rows == 1) {
-                                        echo $param_username;
+                                        echo $user;
                                     } else {
                                         echo "no user name";
                                     }
