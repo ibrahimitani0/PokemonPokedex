@@ -63,30 +63,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                       <div class="row">
                           <div class="col-md-12">
                             <?php
-                            $SNS = "SELECT id FROM users WHERE username = ?";
-                            
-                            if($select = $mysqli->prepare($SNS)) {
-                                // Bind variables to the prepared statement as parameters
-                                $select->bind_param("s", $user);
-
-                                // Set parameters
-                                $user = trim($_SESSION["username"]);
-
-                                // Attempt to execute the prepared statement
-                                if ($select->execute()) {
-                                    // store result
-                                    $select->store_result();
-
-                                    if ($select->num_rows == 1) {
-                                        echo $user;
-                                    } else {
-                                        echo "no user name";
-                                    }
-                                }
-                                $select->close();
-                            }
-                            $mysqli->close();
-
+                           echo $_SESSION['username'];
                             ?>
                           </div>
                           </div>
