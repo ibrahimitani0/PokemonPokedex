@@ -78,7 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     $select->store_result();
 
                                     if ($select->num_rows == 1) {
-                                        echo $username;
+                                        echo $param_username;
                                     } else {
                                         echo "no user name";
                                     }
