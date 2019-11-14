@@ -49,7 +49,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4>Welcome to PokemonPokedex Forums</h4>
+                    <h4>PokemonPokedex Forums</h4>
                 </div>
                 <div class="panel-body">
 
