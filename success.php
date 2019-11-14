@@ -1,3 +1,14 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +27,13 @@
 
 </head>
 
-<body>
+<body background="images/poketexture1.jpg">
+<style>
+    .container-outer { overflow: scroll; width: 100%; height: 970px; }
+
+    .container-inner { width: 100%; }
+</style>
+
 
 <?php include 'header.php'; ?>
 
@@ -28,14 +45,29 @@
 
         <div class="col-md-9">
 
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
 
-            <h1>thanks for your comment !</h1>
+                            <h4>Thanks for your comment <b><?php echo htmlspecialchars($_SESSION["username"]); ?> </b></h4>
+                        </div>
+
+                        <h4 style="padding-bottom: 15px; padding-left: 10px;">See all user's comments:</h4>
+
+                            <div class = " panel-body container-outer">
+
+                        <div class=" container-inner">
+
+                            <?php
+                            $sql_Allmsg = mysqli_query($mysqli, 'SELECT * FROM Message;');
+
+                            while($pull_msgs = $sql_Allmsg->fetch_assoc()){
+                                echo '<ul class="list-group"><li class="list-group-item"><p><b>'.$pull_msgs['UName'] . '</b> left a comment <b>"' . $pull_msgs['Message'] . ' "</b> about the Pokemon <b>" '.$pull_msgs['PokemonName'].'"</b></p></li></ul>';
+                            }
 
 
+                            ?>
 
-            <div class="well">
-                <div class="row">
-
+                    </div>
 
 
 

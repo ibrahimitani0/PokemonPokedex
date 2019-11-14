@@ -44,7 +44,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4><b><?php echo htmlspecialchars($_SESSION["username"]); ?> </b>'s profile</h4></div>
+                    <h4><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>'s profile</h4></div>
             <?php
 
             $profile = mysqli_query($mysqli, "SELECT username, password, email FROM `users` WHERE username LIKE '".$_SESSION["username"]."';");
@@ -75,7 +75,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h4>Comments</h4>
+                        <h4>Your Comments</h4>
                     </div>
                     <div class="panel-body">
                 <?php
