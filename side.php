@@ -9,7 +9,7 @@ include 'dbinfo.php';
 
 
            <ul class="list-group">
-              <li class="list-group-item"><a class="btn btn-block" style="background-color: grey; color: white" href="SinglePokemon.php?Type1=Normal"> Normal</a></li>
+              <li class="list-group-item"><a class="btn btn-block" style="background-color: grey; color: white;" href="SinglePokemon.php?Type1=Normal"> Normal</a></li>
               <li class="list-group-item"><a class="btn btn-block" style="background-color: green; color: white" href="SinglePokemon.php?Type1=Grass"> Grass</a></li>
               <li class="list-group-item"><a class="btn btn-block" style="background-color: darkslateblue; color: white" href="SinglePokemon.php?Type1=Dragon"> Dragon</a></li>
                <li class="list-group-item"><a class="btn btn-block" style="background-color: orangered; color: white" href="SinglePokemon.php?Type1=Fire"> Fire</a></li>

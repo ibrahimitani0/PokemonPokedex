@@ -80,6 +80,7 @@ include 'dbinfo.php';
                             <input type="text" class="form-control" name="search" placeholder="Search" style="width: 250px;">
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                        <a href="logout.php" class="btn btn-danger">Sign Out <span class="glyphicon glyphicon-log-out"></span></a>
                     </form>
 
                 </div>

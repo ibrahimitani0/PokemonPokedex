@@ -6,6 +6,7 @@ session_start();
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
+
 }
 ?>
 <!DOCTYPE html>
@@ -40,45 +41,53 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
         <div class="col-md-9">  <!-- start main content column -->
-            <div class="row">
-                <div class="col-md-12">
-
-                </div>
-            </div>
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>'s Profile</h4>
-                </div>
-                <div class="panel-body">
+                    <h4><b><?php echo htmlspecialchars($_SESSION["username"]); ?> </b>'s profile</h4></div>
+            <?php
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php
-                            $profile = mysqli_query($mysqli, "SELECT username, password, email FROM `users` WHERE username LIKE '".$_SESSION["username"]."';");
+            $profile = mysqli_query($mysqli, "SELECT username, password, email FROM `users` WHERE username LIKE '".$_SESSION["username"]."';");
 
-                            while($pull_profile = $profile->fetch_assoc()){
+            while ($pull_profile = $profile->fetch_assoc()) {
+                echo '<div class="panel-body">';
+                echo '<div class="well">' .
+                    '<div class="row">' .
+                    '<div class="col-md-12">' .
+                    '<div class="col-md-6">' .
+                   '<div class="list-group">' .
+                    '<img  class="img-thumbnail"  src="./images/pikachu_pokemon_profile_avatar_people-512.png" alt="pokemon image"/>' .
+                    '</div>' .
+                    '</div>' .
+                    '<div class="col-md-6"><div class="panel panel-primary"><div class="panel-heading">' .
+                    '<h4>Information:</h4></div>' .
+                    '<div class="panel-body" ><p><span class="label label-primary">Name:</span> ' . $pull_profile['username'] . '</p>' .
+                    '<p><span class="label label-info">Email</span> ' . $pull_profile['email'] . '</p>'.
+                 '<p style="margin-top: 10px; margin-bottom: 0"><a href="reset-password.php" class="btn btn-warning">Reset Your Password</a></p>';
 
-                                echo '<ul style="margin-bottom: 50px">'.
-                                '<li class="list-unstyled">' .
-                                    '<h3 class="list-group-item-text"><span class=" label label-danger">User Name:</span> '.$pull_profile['username'] .'</h3>' .
-                                '</li>' .
-                                '<li class="list-unstyled">'.
-                                    '<h3 class="list-group-item-text"><span class=" label label-primary">Email:</span> '.$pull_profile['email'].' </h3>' .
-                                '</li>'.
-                            '</ul>';
-                            }
-                            ?>
+                echo '</div></div></div>';
 
-                            <p style="margin-top: 10px; margin-bottom: 0">
-                                <a style="margin-right: 460px " href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-                                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-                            </p>
-                        </div>
+                echo '</div>' .
+                    '</div>';
+            }
+
+
+            ?>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Comments</h4>
                     </div>
+                    <div class="panel-body">
+                <?php
 
-                </div>
-            </div>
+                $sql_messages = mysqli_query($mysqli, "SELECT UName, Message, PokemonName FROM Message Where UName LIKE '" . $_SESSION["username"] . "';");
+
+                while($msg = $sql_messages->fetch_assoc()){
+                    echo '<p> You left a comment <b>"'. $msg['Message'] . '"</b> on the Pokemon <b>' . $msg['PokemonName'] .'</b></p>';
+                }
+                echo '</div>'.'</div>'. '</div>';
+                ?>
+
         </div>
     </div> <!-- primary panel ends here -->
 
