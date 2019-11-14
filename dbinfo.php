@@ -1,11 +1,11 @@
 <?php
 
 $user = 'root';
-$pass = '';
+$pass = 'admin12345678';
 $db = 'PokemonPokedex';
-$host= 'localhost';
+$host= 'pokemonpokedex.cg60yrfxwjb1.us-east-1.rds.amazonaws.com';
 
-$mysqli = new mysqli($host, $user, $pass = '', $db);
+$mysqli = new mysqli($host, $user, $pass, $db);
 
 // Check connection
 if($mysqli === false){
