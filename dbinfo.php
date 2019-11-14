@@ -3,7 +3,7 @@
 $user = 'root';
 $pass = 'admin12345678';
 $db = 'PokemonPokedex';
-$host= 'http://pokemonlb-1722982400.us-east-1.elb.amazonaws.com/';
+$host= 'http://18.205.194.68/';
 
 $mysqli = new mysqli($host, $user, $pass, $db);
 
