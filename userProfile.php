@@ -67,11 +67,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     '<h3 class="list-group-item-text"><span class=" label label-primary">Email:</span> '.$pull_profile['email'].' </h3>' .
                                 '</li>'.
                             '</ul>';
-
                             }
-
                             ?>
-
 
                             <p style="margin-top: 10px; margin-bottom: 0">
                                 <a style="margin-right: 460px " href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
