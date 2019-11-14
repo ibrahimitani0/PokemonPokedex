@@ -25,7 +25,7 @@
             <?php
             echo '<div class="panel panel-primary">
                 <div class="panel-heading"><h4>All Generations</h4>
-                </div><div class="panel-body container-outer">
+                </div><div class="panel-body container-outer" style="height: 583px;">
                 <div class="container-inner" >';
 
             $sql_display = mysqli_query($mysqli, "SELECT * FROM `Pokemon`;");

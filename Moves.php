@@ -25,10 +25,10 @@
 
             <?php
             if (isset($_SESSION['UID'])) {
-                echo '<div class="panel panel-primary" ><div class="panel-heading"><h4>All Pokemon Moves</h4></div><div class="panel-body container-outer" ><div class="container-inner" >';
+                echo '<div class="panel panel-primary" ><div class="panel-heading"><h4>All Pokemon Moves</h4></div><div class="panel-body container-outer" style="height: 583px;"><div class="container-inner" >';
 
             } else {
-                echo '<div class="panel panel-primary"><div class="panel-heading"><h4>All Pokemon Moves</h4></div><div class="panel-body container-outer"><div class="container-inner" >';
+                echo '<div class="panel panel-primary"><div class="panel-heading"><h4>All Pokemon Moves</h4></div><div class="panel-body container-outer" style="height: 583px;"><div class="container-inner" >';
 
             }
 

@@ -53,7 +53,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                         <h4 style="padding-bottom: 15px; padding-left: 10px;">See all user's comments:</h4>
 
-                            <div class = " panel-body container-outer">
+                            <div class = " panel-body container-outer" style="height: 530px;">
 
                         <div class=" container-inner">
 

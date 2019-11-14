@@ -22,7 +22,7 @@
     #container-inner { width: 100%; }
 </style>
 
-<body>
+<body background="images/poketexture1.jpg">
 
 <?php include 'header.php'; ?>
 
@@ -35,7 +35,7 @@
         <div class="panel-primary col-md-9" >
 
 
-            <div class="panel panel-heading">Search Results</div><div id="container-outer"><div id="container-inner">
+            <div class="panel panel-heading">Search Results</div><div id="container-outer" style="height: 583px;"><div id="container-inner">
             <?php
                 if($_POST['search'] !== '') {
                     $query = mysqli_query($mysqli, "SELECT * FROM `Pokemon` where Type1 LIKE '" . $_POST['search'] . "' OR Type2 LIKE '" . $_POST['search'] . "' OR DexNumber LIKE '" . $_POST['search'] . "' OR PokemonName Like '%" . $_POST['search'] . "%'or PokemonName LIKE '%". $_POST['search']."%';");

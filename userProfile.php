@@ -28,6 +28,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 
 <body background="images/poketexture1.jpg">
+<style>
+    .container-outer { overflow: scroll; width: 100%; height: 970px; }
+
+    .container-inner { width: 100%; }
+</style>
 
 
 <?php include 'header.php'; ?>
@@ -50,8 +55,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             $profile = mysqli_query($mysqli, "SELECT username, password, email FROM `users` WHERE username LIKE '".$_SESSION["username"]."';");
 
             while ($pull_profile = $profile->fetch_assoc()) {
-                echo '<div class="panel-body">';
-                echo '<div class="well">' .
+                echo '<div class="panel-body container-outer" style="height: 583px;">';
+                echo '<div class="well container-inner">' .
                     '<div class="row">' .
                     '<div class="col-md-12">' .
                     '<div class="col-md-6">' .
@@ -73,7 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
             ?>
-                <div class="panel panel-primary">
+                <div class="panel panel-primary" style="margin-top: 20px">
                     <div class="panel-heading">
                         <h4>Your Comments</h4>
                     </div>

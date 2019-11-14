@@ -29,13 +29,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div class="col-md-9">  <!-- start main content column -->
 
 
-          <div class="panel panel-primary">
+          <div class="panel panel-primary" >
 
-              <div class="panel-heading">
+              <div class="panel-heading" >
                   <h4>Hey <b><?php echo htmlspecialchars($_SESSION["username"]); ?> </b>Welcome to PokemonPokedex !!</h4>
 
               </div>
-                <div class="panel-body">
+                <div class="panel-body" style="height: 580px;">
 
                   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                       <!--  <div style="padding-bottom:10px;"><h3>All Regions Map</h3></div> -->

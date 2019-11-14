@@ -3,13 +3,18 @@
 include 'dbinfo.php';
 
 ?>
+<style>
+    .container-outer { overflow: scroll; width: 100%; height: 970px; }
 
-         <div class="panel panel-primary">
+    .container-inner { width: 100%; }
+</style>
+
+         <div class="panel panel-primary ">
              <div class="panel-heading"><span><img alt="pokeball" src="images/pokeballside2.png" style="height: 20px;"></span> Pokemons By Type</div>
 
 
-           <ul class="list-group">
-              <li class="list-group-item"><a class="btn btn-block" style="background-color: grey; color: white;" href="SinglePokemon.php?Type1=Normal"> Normal</a></li>
+           <ul class="list-group container-outer" style="height: 600px;">
+              <li class="list-group-item container-inner"><a class="btn btn-block" style="background-color: grey; color: white;" href="SinglePokemon.php?Type1=Normal"> Normal</a></li>
               <li class="list-group-item"><a class="btn btn-block" style="background-color: green; color: white" href="SinglePokemon.php?Type1=Grass"> Grass</a></li>
               <li class="list-group-item"><a class="btn btn-block" style="background-color: darkslateblue; color: white" href="SinglePokemon.php?Type1=Dragon"> Dragon</a></li>
                <li class="list-group-item"><a class="btn btn-block" style="background-color: orangered; color: white" href="SinglePokemon.php?Type1=Fire"> Fire</a></li>
