@@ -22,7 +22,7 @@
   <component name="ProjectId" id="1TZc0txnu9D13I9fpUv4eUdO1Va" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.bitnami/stackman/machines/xampp/volumes/root/htdocs/PokemonPokedex" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -48,7 +48,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573670838557</updated>
       <workItem from="1573670839748" duration="41000" />
-      <workItem from="1573671499824" duration="9920000" />
+      <workItem from="1573671499824" duration="10010000" />
+      <workItem from="1573683349535" duration="99000" />
     </task>
     <servers />
   </component>

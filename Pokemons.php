@@ -53,18 +53,13 @@
 
             ?>
 
-        </div>
-        </div>
-    </div>
-    <?php if (isset($_SESSION['UID'])) {
-        echo '</div></div>';
-    } else {
-        echo '</div></div>';
-
-    }
-    ?>
-
+                </div>
+            </div>
+         </div>
+       </div>  <!-- end main content column -->
+    </div>  <!-- end main content row -->
 </div>   <!-- end main content container -->
+
 
 <?php include 'footer.php'; ?>
 

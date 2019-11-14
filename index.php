@@ -44,40 +44,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                               <img src="images/all%20pokemon.jpg"/>
                           </div>
                       </div>
-                      <div class="row">
-                          <div class="col-md-12">
-                              <p style="margin-top: 10px; margin-bottom: 0">
-                                  <a style="margin-right: 460px " href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-                                  <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-                              </p>
-                          </div>
-                      </div>
 
                 </div>
             </div>
-
-              <div class="panel-body">
-
-                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                      <!--  <div style="padding-bottom:10px;"><h3>All Regions Map</h3></div> -->
-                      <div class="row">
-                          <div class="col-md-12">
-                            <?php
-                            $me = $_SESSION['username'];
-
-                            $SNS = mysqli_query($mysqli,'SELECT id, email, username FROM users WHERE username = '.$me.';');
-                            while($pull_sns = $SNS->fetch_assoc()){
-                                echo $pull_sns['email'];
-
-                            }
-                           echo $me;
-                            ?>
-                          </div>
-                          </div>
-                      </div>
-
-                  </div>
-              </div>
         </div> <!-- panel ends here -->
 
     </div>

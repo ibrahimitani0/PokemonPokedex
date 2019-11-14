@@ -45,8 +45,7 @@ include 'dbinfo.php';
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="index.php">
-                        <img class="img-responsive img-logo" alt="PokeLookUp" src="images/pokeball.jpeg"
-                             style="height: 20px;">
+                        <img class="img-responsive img-logo" alt="Index" src="images/pokemonlogo.png" style="width: 60px;">
                     </a>
                 </div>
 
@@ -57,13 +56,24 @@ include 'dbinfo.php';
                         if (basename($_SERVER['SCRIPT_FILENAME']) == 'Pokemons.php') {
                             echo("class='active'");
                         }
-                        ?>><a href="Pokemons.php"><img class="img-responsive img-logo" style="width: 60px;" src="images/pokemonlogo.png"></a></li>
+                        ?>><a href="Pokemons.php"><img class="img-responsive img-logo" style="height: 20px;" src="images/pokeball.jpeg"></a></li>
 
                         <li <?php
                         if (basename($_SERVER['SCRIPT_FILENAME']) == 'Moves.php') {
                             echo("class='active'");
                         }
-                        ?>><a href="Moves.php"><img class="img-responsive img-logo" style="width: 60px; height: 22px; " src="images/starterpokemons.jpeg"></a></li>
+                        ?>><a href="Moves.php"><img class="img-responsive img-logo" style="height: 20px " src="images/greatball.jpg"></a></li>
+                        <li <?php
+                        if (basename($_SERVER['SCRIPT_FILENAME']) == 'ForumsSNS.php') {
+                            echo("class='active'");
+                        }
+                        ?>><a href="ForumsSNS.php"><img class="img-responsive img-logo" style="height: 20px  " src="images/ultraball.jpg"></a></li>
+                        <li <?php
+                        if (basename($_SERVER['SCRIPT_FILENAME']) == 'userProfile.php') {
+                            echo("class='active'");
+                        }
+                        ?>><a href="userProfile.php"><img class="img-responsive img-logo" style="height: 20px; " src="images/pikachu_pokemon_profile_avatar_people-512.png"></a></li>
+
                     </ul>
                     <form class="navbar-form navbar-right" method="POST" action="SearchQuery.php">
                         <div class="form-group">
@@ -71,6 +81,7 @@ include 'dbinfo.php';
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
                     </form>
+
                 </div>
             </div>
         </nav>

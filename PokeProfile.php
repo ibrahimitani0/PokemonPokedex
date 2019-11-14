@@ -218,24 +218,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <div class="form-group" style="margin-bottom: 10px;">
                     <input type="text" class="form-control" name="msg" placeholder="comment" style="width: 800px;">
                 </div>
-
-                <div style="margin-bottom: 10px;">
-                <select class="form-group" name="pokemon">
-                    <option value="PokemonName" selected disabled>Pokemon Name</option>
-                    <ol class="breadcrumb">
-                        <li>
-                            <?php
-                            $sql_pokeNames = mysqli_query($mysqli, 'SELECT PokemonName FROM Pokemon Where PokemonID = '.$_GET['id'] .';');
-
-                            while ($pull_name = $sql_pokeNames->fetch_assoc()) {
-                                echo '<option value="' . $pull_name['PokemonName'] . '" id="' . $_GET['id'] . '" name = "PokemonName">' . '<div>'. $pull_name['PokemonName'] .'</div></option>';
-
-                            }
-                            ?>
-                        </li>
-                    </ol>
-                </select>
-                </div>
                 <div class="form-group">
                 <button style="width: 100px;" type="submit" name="share" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span></button>
                 </div>
@@ -260,14 +242,20 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
     
     $pokemon = $_POST['pokemon'];
 
-    if($name !=''|| $msg !='' || $pokemon !=''){
+    if(empty($msg)){
 
-        $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '$pokemon')");
+        echo ("<script>window.location.href='error.php'</script>;");
+    } else{
+        $sql_comment = mysqli_query($mysqli,'SELECT PokemonID, PokemonName FROM `Pokemon` WHERE PokemonID = '.$_GET['id'].';');
 
-        echo "<br/><br/><span>Message Posted Successfully...!!</span>";
-    }
-    else{
-        echo "<p>Failed To Post Message<br/> Some Fields are Blank....!!</p>";
+       while ($comment = $sql_comment->fetch_assoc()){
+           echo $comment['PokemonName'];
+           $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '". $comment['PokemonName'] ."')");
+
+       }
+
+        echo ("<script>window.location.href='success.php'</script>;");
+
     }
 }
 mysqli_close($mysqli); // Closing Connection with Server
