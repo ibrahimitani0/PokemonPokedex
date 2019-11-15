@@ -42,3 +42,61 @@ create schema pokedex;
 exit
 mysql -h **pokelookup.cg60yrfxwjb1.us-east-1.rds.amazonaws.com*** -P 3306 -u **username** -p  pokedex > **sql file*
 
+
+
+
+
+
+
+****************************************************************************************************************************
+
+Lambda function creation:
+1- Create an RDS setupd the database and the sql pokemon file
+
+2- create the lambda function, change handler name to main.handler, set execution role to service-role/lambda_rds
+3- import the node.js zipfile with the code created:
+
+var mysql = require('mysql');
+var config = require('./config.json');
+const AWS = require('aws-sdk');
+
+var pool  = mysql.createPool({
+  host     : config.DBhost,
+  user     : config.DBuser,
+  password : config.DBpassword,
+  database : config.DBname
+});
+
+exports.handler =  (event, context, callback) => {
+  //prevent timeout from waiting event loop
+  context.callbackWaitsForEmptyEventLoop = false;
+
+  pool.getConnection(function(err, connection) {
+     var messageID = event.Records[0].Sns.MessageId;
+    var message = event.Records[0].Sns.Message;
+    
+    sql ="INSERT INTO Messages (messageID, message) VALUES ?";
+    var values = [[messageID, message]];
+    
+    
+    // Use the connection
+    connection.query(sql, [values], function (error, result) {
+      // And done with the connection.
+      connection.release();
+      // Handle error after the release.
+      if (error) callback(error, null);
+      else callback(null, result.affectedRows);
+    });
+  });
+};
+
+in config.json change the host name to the rds endpoint,and change db name to PokemonPokedex;
+
+scroll up and create a test for SNS
+
+4- create SNS topic and subscribe the lambda to the topic.
+5- done now you can publish a message and the lambda function will be triggered by the event and inserts the messageID
+ and the message into the table created inside our database;
+
+
+
