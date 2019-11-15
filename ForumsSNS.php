@@ -8,19 +8,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 ?>
-<?php
-// Fetch the raw POST body containing the message
-$postBody = file_get_contents('php://input');
-
-// JSON decode the body to an array of message data
-$message = json_decode($postBody, true);
-if ($message) {
-    // Do something with the data
-    echo $message['Message'];
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
