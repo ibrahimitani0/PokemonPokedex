@@ -252,10 +252,9 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
            $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '". $comment['PokemonName'] ."')");
 
        }
-       if($sql_insert ) {
-           //echo("<script> window.location.href='success.php'</script>;");
-           echo("<script> window.location.href='PoekProfile.php?id=" . $pull_data['PokemonID'] .'"</script>;');
-       }
+
+       echo("<script> window.location.href='success.php'</script>;");
+
 
     }
 }
