@@ -45,34 +45,36 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>  <!-- end left navigation rail -->
 
 
-        <div class="col-md-9">  <!-- start main content column -->
-            <div class="row">
-                <div class="col-md-12">
-
-                </div>
-            </div>
+        <div class="col-md-9">
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4>PokemonPokedex Forums</h4>
+
+                    <h4>Pokemon News & Updates</b></h4>
                 </div>
-                <div class="panel-body container-outer">
-                    <div class="container-inner" >
+                <div class = " panel-body container-outer" style="height: 530px;">
+
+                    <div class=" container-inner">
+
+                        <?php
+                        $sql_SNS = mysqli_query($mysqli, 'SELECT * FROM News;');
+
+                        while($sns_pull = $sql_Allmsg->fetch_assoc()){
+                            echo '<ul class="list-group"><li class="list-group-item"><p>' . $sns_pull['Message'] . '</p></li></ul>';
+                        }
 
 
-                    <?php
-                    $sql_SNS = mysqli_query($mysqli, "SELECT * FROM `News`;");
-
-                    while($sns_pull = $sql_SNS->fetch_assoc()){
-                        echo '<ul class="list-group"><li class="list-group-item"><p>' . $sns_pull['Message'] . '</p></li></ul>';
-                    }
-
-                    ?>
+                        ?>
 
                     </div>
+
+
+
                 </div>
             </div>
-        </div>
+
+
+        </div>  <!-- end main content column -->
     </div> <!-- primary panel ends here -->
 
 </div>
