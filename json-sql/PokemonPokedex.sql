@@ -304,6 +304,18 @@ INSERT INTO `Legendary` (`PokemonID`, `Legendary`) VALUES
 (164, 'Yes'),
 (165, 'Yes'),
 (166, 'Yes');
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `News`
+--
+
+CREATE TABLE `News` (
+                           `NewsID` varchar(255) NOT NULL,
+                           `Message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 -- --------------------------------------------------------
 
