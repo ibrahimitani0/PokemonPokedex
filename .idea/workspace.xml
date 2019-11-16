@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff2c25-d419-41b8-83c6-9793bc4ef0bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ForumsSNS.php" beforeDir="false" afterPath="$PROJECT_DIR$/ForumsSNS.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +65,7 @@
       <workItem from="1573671499824" duration="10010000" />
       <workItem from="1573683349535" duration="99000" />
       <workItem from="1573761867254" duration="1923000" />
-      <workItem from="1573914947899" duration="1908000" />
+      <workItem from="1573914947899" duration="2007000" />
     </task>
     <task id="LOCAL-00001" summary="added news table to database">
       <created>1573915296253</created>
@@ -82,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573915541962</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added sns">
+      <created>1573917051893</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573917051893</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added news table to database" />
     <MESSAGE value="lambda and db info host change" />
-    <option name="LAST_COMMIT_MESSAGE" value="lambda and db info host change" />
+    <MESSAGE value="added sns" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sns" />
   </component>
 </project>
