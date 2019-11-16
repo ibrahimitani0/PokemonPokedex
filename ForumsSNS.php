@@ -54,10 +54,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
                     <?php
-                    $sql_SNS = mysqli_query($mysqli, "SELECT email FROM `users` WHERE username LIKE '".$_SESSION["username"]."';");
+                    $sql_SNS = mysqli_query($mysqli, "SELECT message FROM `News`;");
 
                     while($sns_pull = $sql_SNS->fetch_assoc()){
-                        echo $sns_pull['email'];
+                        echo $sns_pull['Message'];
                     }
 
                     ?>
