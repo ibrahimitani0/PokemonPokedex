@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 var config = require('./config.json');
-const AWS = require('aws-sdk');
+var AWS = require('aws-sdk');
 
 var pool  = mysql.createPool({
   host     : config.DBhost,
