@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff2c25-d419-41b8-83c6-9793bc4ef0bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokeProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/PokeProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +65,7 @@
       <workItem from="1573671499824" duration="10010000" />
       <workItem from="1573683349535" duration="99000" />
       <workItem from="1573761867254" duration="1923000" />
-      <workItem from="1573914947899" duration="3576000" />
+      <workItem from="1573914947899" duration="3702000" />
     </task>
     <task id="LOCAL-00001" summary="added news table to database">
       <created>1573915296253</created>
@@ -125,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573917974758</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added sns">
+      <created>1573918780137</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573918780137</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

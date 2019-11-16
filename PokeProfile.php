@@ -249,7 +249,6 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
         $sql_comment = mysqli_query($mysqli,'SELECT PokemonID, PokemonName FROM `Pokemon` WHERE PokemonID = '.$_GET['id'].';');
 
        while ($comment = $sql_comment->fetch_assoc()){
-           echo $comment['PokemonName'];
            $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '". $comment['PokemonName'] ."')");
 
        }
