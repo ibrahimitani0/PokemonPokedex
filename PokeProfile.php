@@ -260,7 +260,19 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
 mysqli_close($mysqli); // Closing Connection with Server
 
 ?>
-<script>window.location.reload();</script>
+<script>
+    //you want reload once after first load
+    window.onload = function() {
+        //considering there aren't any hashes in the urls already
+        if(!window.location.hash) {
+            //setting window location
+            window.location = window.location + '#loaded';
+            //using reload() method to reload web page
+            window.location.reload();
+        }
+    }
+
+</script>
 
 <?php include 'footer.php'; ?>
 
