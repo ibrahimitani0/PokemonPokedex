@@ -258,9 +258,9 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
     }
 }
 mysqli_close($mysqli); // Closing Connection with Server
- echo ("<script>window.location.reload();</script>");
-?>
 
+?>
+<script>window.location.reload();</script>
 
 <?php include 'footer.php'; ?>
 
