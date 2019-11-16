@@ -27,6 +27,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 
 <body background="images/poketexture1.jpg">
+<style>
+    .container-outer { overflow: scroll; width: 100%; height: 970px; }
+
+    .container-inner { width: 100%; }
+</style>
+
 
 
 <?php include 'header.php'; ?>
@@ -50,7 +56,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <div class="panel-heading">
                     <h4>PokemonPokedex Forums</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body container-outer">
+                    <div class="container-inner" >
 
 
                     <?php
@@ -62,7 +69,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                     ?>
 
-
+                    </div>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ exports.handler =  (event, context, callback) => {
      var messageID = event.Records[0].Sns.MessageId;
     var message = event.Records[0].Sns.Message;
 
-    sql ="INSERT INTO Messages (messageID, message) VALUES ?";
+    sql ="INSERT INTO News (NewsID, Message) VALUES ?";
     var values = [[messageID, message]];
 
 
