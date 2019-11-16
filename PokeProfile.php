@@ -252,27 +252,16 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
            $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '". $comment['PokemonName'] ."')");
 
        }
-
-        //echo ("<script>window.location.href='success.php'</script>;");
+       if($sql_insert ) {
+           //echo("<script> window.location.href='success.php'</script>;");
+           echo("<script> window.location.href='PoekProfile.php?id=" . $pull_data['PokemonID'] .'"</script>;');
+       }
 
     }
 }
 mysqli_close($mysqli); // Closing Connection with Server
 
 ?>
-<script>
-    //you want reload once after first load
-    window.onload = function() {
-        //considering there aren't any hashes in the urls already
-        if(!window.location.hash) {
-            //setting window location
-            window.location = window.location + '#loaded';
-            //using reload() method to reload web page
-            window.location.reload();
-        }
-    }
-
-</script>
 
 <?php include 'footer.php'; ?>
 
