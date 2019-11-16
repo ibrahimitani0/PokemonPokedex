@@ -57,9 +57,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div class=" container-inner">
 
                         <?php
-                        $sql_SNS = mysqli_query($mysqli, 'SELECT * FROM News;');
+                        $sql_SNS = mysqli_query($mysqli, 'SELECT * FROM `News`;');
 
-                        while($sns_pull = $sql_Allmsg->fetch_assoc()){
+                        while($sns_pull = $sql_SNS->fetch_assoc()){
                             echo '<ul class="list-group"><li class="list-group-item"><p>' . $sns_pull['Message'] . '</p></li></ul>';
                         }
 
