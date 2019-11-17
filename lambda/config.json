@@ -1,6 +1,6 @@
 {
-  "DBhost"     : "pokemonpokedex.celd9dadbfms.us-east-1.rds.amazonaws.com",
-  "DBuser"     : "admin",
+  "DBhost"     : "pokemonpokedex.ca6zg7y5i54m.us-east-2.rds.amazonaws.com",
+  "DBuser"     : "root",
   "DBpassword" : "admin12345678",
   "DBname" : "PokemonPokedex"
 }
