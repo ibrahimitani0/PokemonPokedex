@@ -1,0 +1,20 @@
+mysql -h pokemonpokedex.ca6zg7y5i54m.us-east-2.rds.amazonaws.com -P 3306 -u admin -p  PokemonPokedex < ./PokemonPokedex/json-sql/PokemonPokedex.sql
+
+
+ubuntu 18.04 server 
+type = t2.micro
+
+
+
+
+
+sudo apt update
+sudo apt upgrade
+sudo apt install php -y
+sudo apt install mysql-server -y
+cd /var/www/html/
+sudo git clone https://github.com/ibrahimitani0/PokemonPokedex.git
+
+enter username and password to git hub
+
+set up rds 
