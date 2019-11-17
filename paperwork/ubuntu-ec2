@@ -9,9 +9,10 @@ type = t2.micro
 
 
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt install php -y
 sudo apt install mysql-server -y
+sudo apt install phpmyadmin
 cd /var/www/html/
 sudo git clone https://github.com/ibrahimitani0/PokemonPokedex.git
 
