@@ -1,9 +1,9 @@
 <?php
 
-$user = 'admin';
+$user = 'root';
 $pass = 'admin12345678';
 $db = 'PokemonPokedex';
-$host= 'pokemonpokedex.celd9dadbfms.us-east-1.rds.amazonaws.com';
+$host= 'pokemonpokedex.ca6zg7y5i54m.us-east-2.rds.amazonaws.com';
 
 $mysqli = new mysqli($host, $user, $pass, $db);
 
