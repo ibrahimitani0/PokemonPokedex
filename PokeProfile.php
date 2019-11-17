@@ -253,13 +253,10 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
 
        }
 
-       echo("<script> window.location.href='success.php'</script>;");
-
-
     }
 }
 mysqli_close($mysqli); // Closing Connection with Server
-
+echo("<script> window.location.href='success.php'</script>;");
 ?>
 
 <?php include 'footer.php'; ?>
