@@ -252,11 +252,12 @@ if(isset($_POST['share'])){ // Fetching variables of the form which travels in U
            $sql_insert = mysqli_query($mysqli,"INSERT INTO Message(UName, Message, PokemonName) VALUES ('$name','$msg', '". $comment['PokemonName'] ."')");
 
        }
-
+        echo("<script> window.location.href='success.php'</script>;");
     }
 }
 mysqli_close($mysqli); // Closing Connection with Server
-echo("<script> window.location.href='success.php'</script>;");
+
+
 ?>
 
 <?php include 'footer.php'; ?>
