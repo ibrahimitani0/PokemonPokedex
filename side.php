@@ -22,7 +22,7 @@ include 'dbinfo.php';
                <li class="list-group-item"><a class="btn btn-block" style="background-color: olivedrab; color: white" href="SinglePokemon.php?Type1=Bug"> Bug</a></li>
                <li class="list-group-item"><a class="btn btn-block" style="background-color: deeppink; color: white" href="SinglePokemon.php?Type1=Psychic">Psychic</a></li>
                 <li class="list-group-item"><a class="btn btn-block" style="background-color: gold; color: white" href="SinglePokemon.php?Type1=Electric">Electric</a></li>
-                <li class="list-group-item"><a class="btn btn-block" style="background-color: brown; color: white" href="SinglePokemon.php?Type1=Fight">Fighting</a></li>
+                <li class="list-group-item"><a class="btn btn-block" style="background-color: brown; color: white" href="SinglePokemon.php?Type1=Fighting">Fighting</a></li>
                 <li class="list-group-item"><a class="btn btn-block" style="background-color: cornflowerblue; color: white" href="SinglePokemon.php?Type1=Flying">Flying</a></li>
                 <li class="list-group-item"><a class="btn btn-block" style="background-color: slateblue; color: white" href="SinglePokemon.php?Type1=Ghost">Ghost</a></li>
                  <li class="list-group-item"><a class="btn btn-block" style="background-color: #c0a16b; color: white" href="SinglePokemon.php?Type1=Ground">Ground</a></li>
