@@ -1,29 +1,33 @@
 Gaining access to the PokemonPokedex 
+	
 
-Step 1: go to your email and find the accout credentials that given to you
-      info that will be included:
-        1: username
-        2: current password
-        3. Site Allies
-Step 2. go to 'Load Balencer' security groups under EC2 and change the current inbound rule to your IP
-        A. select edit inbound rules on the 'Load Balencer' security group
-        B. change the inbound rule 'User Access' to say 'My IP'
-        C. Press Save
-Step3. open a new tab in your browser and connect to *************insert URL*************************
+	Step 1: go to your email and find the account credentials that given to you
+	      info that will be included:
+	        1: username
+	        2: current password
+	        3. Site Allies
+	Step 2. go to 'Load Balancer' security groups under EC2 and change the current inbound rule to your IP
+	        A. select edit inbound rules on the 'Load Balancer' security group
+	        B. change the inbound rule 'User Access' to say 'My IP'
+	        C. Press Save
+	Step3. open a new tab in your browser and connect to *************insert URL*************************
+	
 
-step4. do what you want on the website
+	step4. do what you want on the website
+	
 
-Step 5. you can take a look at our set up for the following AWS services
-        - Simple Notification Service (SNS)
-            to see a sns message be posted click on forums link on the pokemon pokedex site
-        - Lambda 
-            writes the SNS mesage to our site
-        - Elastic Load Balencer (ELB)
-            handles the traffic from users
-        - Autoscaling EC2 groups
-            hosts the web site on all EC2s in the group
-        - Relational Database Service (RDS)
-            holds site data for easy access
-            
+	Step 5. you can take a look at our set up for the following AWS services
+	        - Simple Notification Service (SNS)
+	            to see a sns message be posted click on forums link on the Pokemon Pokedex site
+	        - Lambda 
+	            writes the SNS message to our site
+	        - Elastic Load Balancer (ELB)
+	            handles the traffic from users
+	        - Autoscaling EC2 groups
+	            hosts the web site on all EC2s in the group
+	        - Relational Database Service (RDS)
+	            holds site data for easy access
+
+
          
      
